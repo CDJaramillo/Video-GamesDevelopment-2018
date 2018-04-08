@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoadNewScene : MonoBehaviour {
 
@@ -10,19 +11,16 @@ public class LoadNewScene : MonoBehaviour {
 	private PlayerController thePlayerExit;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		thePlayerExit = FindObjectOfType<PlayerController> ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
 	//I get here the name of the level
-	void OnTriggerEnter2D(Collider2D other){
-
-		if(other.gameObject.name == "Player"){
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.gameObject.name == "Player")
+		{
 			Application.LoadLevel (levelToLoad);
 			thePlayerExit.startPoint = exitPoint;
 		}

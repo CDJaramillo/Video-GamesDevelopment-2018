@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour 
 {
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
 		else 
 		{
 			Destroy (gameObject);
+			SceneManager.LoadScene(0);
 		}	
 	}
 	

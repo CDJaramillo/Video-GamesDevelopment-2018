@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{ED84D58D-292F-67EB-AABF-8EA745456396}</ProjectGuid>
+    <ProjectGuid>{527EC121-82A4-D247-3D88-D2EC3D43B9A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,6 +56,7 @@
      <Compile Include="Assets\The Hunter\Scripts\LoadNewScene.cs" />
      <Compile Include="Assets\The Hunter\Scripts\MainMenu.cs" />
      <Compile Include="Assets\The Hunter\Scripts\MenuSetting.cs" />
+     <Compile Include="Assets\The Hunter\Scripts\NoDestroy.cs" />
      <Compile Include="Assets\The Hunter\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\The Hunter\Scripts\PlayerController.cs" />
      <Compile Include="Assets\The Hunter\Scripts\PlayerHealthManager.cs" />

@@ -10,6 +10,8 @@ public class MenuSetting : MonoBehaviour
 	public GameObject howToPlayCanvas;
 	public bool plays;
 	public string mainMenu;
+	public bool controls;
+	public GameObject controlsCanvas;
 	// Use this for initialization
 	public void SettingGame()
 	{
@@ -30,7 +32,7 @@ public class MenuSetting : MonoBehaviour
 		}	
 	}
 
-	public void Controls()
+	public void AboutTheGame()
 	{
 		
 		if(this.plays)
@@ -48,8 +50,26 @@ public class MenuSetting : MonoBehaviour
 			this.plays = !this.plays;
 		}	
 	}
+
+	public void ControlScheme()
+	{
+		if(this.controls)
+		{
+			controlsCanvas.SetActive(true);
+		}
+
+		else
+		{
+			controlsCanvas.SetActive(false);
+		}
+
+		if(Input.GetKeyDown (KeyCode.Mouse0))
+		{
+			this.controls = !this.controls;
+		}
+	}
 	
-	public void QuitToMain ()
+	public void QuitToMainMenu ()
 	{
 		SceneManager.LoadScene (this.mainMenu);
 	}

@@ -2751,6 +2751,7 @@ GameObject:
   - component: {fileID: 903678424}
   - component: {fileID: 903678423}
   - component: {fileID: 903678421}
+  - component: {fileID: 903678422}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2773,6 +2774,18 @@ MonoBehaviour:
   playerMaxHealth: 30
   playerCurrentHealth: 0
   flashLength: 0.25
+--- !u!114 &903678422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903678420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689dfcc5c55139b42b09f3ec6ec4d641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Player
 --- !u!50 &903678423
 Rigidbody2D:
   serializedVersion: 4
