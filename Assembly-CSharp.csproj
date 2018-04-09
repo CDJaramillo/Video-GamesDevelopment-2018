@@ -52,6 +52,7 @@
      <Compile Include="Assets\The Hunter\Scripts\DestroyOverTime.cs" />
      <Compile Include="Assets\The Hunter\Scripts\EnemyHealthManager.cs" />
      <Compile Include="Assets\The Hunter\Scripts\FloatingNumbers.cs" />
+     <Compile Include="Assets\The Hunter\Scripts\GameOverMenu.cs" />
      <Compile Include="Assets\The Hunter\Scripts\HurtPlayer.cs" />
      <Compile Include="Assets\The Hunter\Scripts\LoadNewScene.cs" />
      <Compile Include="Assets\The Hunter\Scripts\MainMenu.cs" />

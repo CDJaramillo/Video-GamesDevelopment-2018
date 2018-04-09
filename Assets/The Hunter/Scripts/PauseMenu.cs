@@ -10,25 +10,29 @@ public class PauseMenu : MonoBehaviour
 
 	public void Update ()
 	{
-		if (this.isPaused) {
+		if (this.isPaused) 
+		{
 			pausedMenuCanvas.SetActive (true);
 			Time.timeScale = 0f;
-		} else {
+		} 
+
+		else 
+		{
 			pausedMenuCanvas.SetActive (false);
 			Time.timeScale = 1f;
 		}
 		
-		if (Input.GetKeyDown (KeyCode.Escape)) {
+		if (Input.GetKeyDown (KeyCode.Escape))
+		{
 			this.isPaused = !this.isPaused;
 		}
 	}
 	public void Resume ()
 	{
 		this.isPaused = false;
-	}
-		
-	public void QuitToMain ()
+	}		
+	public void ExitGame ()
 	{
-		SceneManager.LoadScene (this.mainMenu);
+		Application.Quit();
 	}
 }

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadNewScene : MonoBehaviour {
-
+public class LoadNewScene : MonoBehaviour 
+{
 	public string levelToLoad;
 
 	public string exitPoint;
@@ -21,7 +21,7 @@ public class LoadNewScene : MonoBehaviour {
 	{
 		if(other.gameObject.name == "Player")
 		{
-			Application.LoadLevel (levelToLoad);
+			SceneManager.LoadScene (levelToLoad);
 			thePlayerExit.startPoint = exitPoint;
 		}
 	}
