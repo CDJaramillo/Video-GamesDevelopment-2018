@@ -9,14 +9,13 @@ public class LoadNewScene : MonoBehaviour
 
 	public string exitPoint;
 	private PlayerController thePlayerExit;
-
-	// Use this for initialization
+	//Al llamar al script del controlador del jugador este al tener un dont destroy on load no desaparecerá
 	void Start () 
 	{
 		thePlayerExit = FindObjectOfType<PlayerController> ();
 	}
 
-	//I get here the name of the level
+	//Aqui si el juagdor toca un empty con collision cambiará de escena, aplica lo mismo para salir
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.gameObject.name == "Player")

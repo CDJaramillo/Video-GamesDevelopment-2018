@@ -2,38 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthManager : MonoBehaviour {
-
+public class EnemyHealthManager : MonoBehaviour 
+{
 	public int enemyMaxHealth;
 	public int enemyCurrentHealth;
-
 	private PlayerStats theplayerStats;
-
-	//Exp to give when the player kills an enemy
 	public int expToGive;
-
-	// Use this for initialization
-	void Start () {
-		//Setting the initial health
+	void Start () 
+	{
+		//Configurando la vida inicial del enemigo
 		enemyCurrentHealth = enemyMaxHealth;
 		theplayerStats = FindObjectOfType<PlayerStats> ();
 	}
-
-	// Update is called once per frame
-	void Update () {
-		if(enemyCurrentHealth <= 0) {
+	void Update () 
+	{
+		if(enemyCurrentHealth <= 0) 
+		{
 			Destroy (gameObject);
-			//Sends the Exp to the player
+			//Al destruir el enemigo añade la experiencia al jugador, así subirá de nivel
 			theplayerStats.AddExpirience (expToGive);
 		}
 	}
 
-	public void HurtEnemy(int damageToGive) {
-		//When the enemy touch the slime it hurts
+	public void HurtEnemy(int damageToGive) 
+	{
+		//Cuando el jugador toca el enemigo este sufrirá daño
 		enemyCurrentHealth -= damageToGive;
 	}
 
-	public void SetMaxHealth () {
+	public void SetMaxHealth () 
+	{
 		enemyCurrentHealth = enemyMaxHealth;
 	}
 }

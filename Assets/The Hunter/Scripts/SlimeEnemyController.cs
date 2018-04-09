@@ -1,29 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-//Enemy Movement
 public class SlimeEnemyController : MonoBehaviour 
 {
 	public float moveSpeed;
-	private Rigidbody2D slimeRigidbody;
-
-	//if the slime it's moving
+	private Rigidbody2D slimeRigidbody;	
 	private bool moving;
 	public float timeBetweenMove;
 	private float timeBetweenMoveCounter;
 	public float timeToMove;
 	private float timeToMoveCounter;
-
-	//Direction where it moves
 	private Vector3 moveDirection;
-
-	//Time to reload the level
 	public float waitToReload;
 	private bool reloading;
 	private GameObject thePlayer;
-
-	// Use this for initialization
 	void Start () 
 	{
 		slimeRigidbody = GetComponent<Rigidbody2D>();
@@ -31,19 +23,17 @@ public class SlimeEnemyController : MonoBehaviour
 		//timeBetweenMoveCounter = timeBetweenMove;
 		//timeToMoveCounter = timeToMove;
 
-		//The counter will random for random movement
+		//El contador hará un movimiento aleatorio en el mapa
 		timeBetweenMoveCounter = Random.Range (timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
 		timeToMoveCounter = Random.Range (timeToMove * 0.75f, timeToMove * 1.25f);
 		
 	}
-	
-	// Update is called once per frame
 	void Update () 
 	{	
 		/*
-		 * If moving it's true will be set in false but will deteminate the time to the next move,
-		 * now moving it's false will freez the velocity of the enemy, will set moving to true, will
-		 * the range to the next move and the direction and the distance of the enemy movement.
+		 * Si el movimiento es veradero este se seteara en falso para calcular el proximo movimiento
+		 * y si es falso congelará la velocidad del enemigo para volverlo verdadero otra vez
+		 * y calcular la distancia del siguiente movimiento.
 		*/
 
 		if(moving) 
@@ -74,7 +64,7 @@ public class SlimeEnemyController : MonoBehaviour
 		}
 
 
-		//If it's true reload the level
+		//Si es verdadro se cargará el nivel nuevamente con los enemigos y el jugador
 		if(reloading) 
 		{
 			waitToReload -= Time.deltaTime;
@@ -88,21 +78,14 @@ public class SlimeEnemyController : MonoBehaviour
 	}
 
 	//Collision between colliders
-	void OnCollisionEnter2D(Collision2D collider) 
-	{
-		if(collider.gameObject.tag == "Player")
-		{
-			collider.gameObject.GetComponent<PlayerController>().alive = false;
-			Time.timeScale = 0;
-		}
 		//If the two colliders touch Insta kill
 		/*
-		if (collider.gameObject.tag == "Player" && collider.gameObject.name == "Player") {
+		if (collider.gameObject.tag == "Player" && collider.gameObject.name == "Player") 
+		{
 			//Deactivates the player
 			collider.gameObject.SetActive (false);
 			Debug.Log ("You Hit me, man...");
 			reloading = true;
 			thePlayer = collider.gameObject;
 		}*/
-	}
 }

@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/The Hunter/Scenes/MainMenu.unity
     guid: 26d393f34c8554c408df430b087a55f9
   - enabled: 1
+    path: Assets/The Hunter/Scenes/Controls.unity
+    guid: e593f6b40e037be4d8e5abc96d88805a
+  - enabled: 1
+    path: Assets/The Hunter/Scenes/Credits.unity
+    guid: 9d960f8f89fda894e851a3e4ad6190c6
+  - enabled: 1
+    path: Assets/The Hunter/Scenes/HowToPlay.unity
+    guid: 5d1e92b5df7fbcc45bb418a4f18111d8
+  - enabled: 1
+    path: Assets/The Hunter/Scenes/Settings.unity
+    guid: d24dd422691cc0c4fbe9f70e09c6915c
+  - enabled: 1
     path: Assets/The Hunter/Scenes/Test.unity
     guid: 654e8689c355549d28145823be36f57a
   - enabled: 1

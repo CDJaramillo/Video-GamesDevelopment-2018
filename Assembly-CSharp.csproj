@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\The Hunter\MyEventSystem.cs" />
      <Compile Include="Assets\The Hunter\Scripts\AttackEnemy.cs" />
      <Compile Include="Assets\The Hunter\Scripts\CameraController.cs" />
      <Compile Include="Assets\The Hunter\Scripts\DestroyOverTime.cs" />
@@ -56,13 +55,12 @@
      <Compile Include="Assets\The Hunter\Scripts\HurtPlayer.cs" />
      <Compile Include="Assets\The Hunter\Scripts\LoadNewScene.cs" />
      <Compile Include="Assets\The Hunter\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\The Hunter\Scripts\MenuSetting.cs" />
-     <Compile Include="Assets\The Hunter\Scripts\NoDestroy.cs" />
      <Compile Include="Assets\The Hunter\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\The Hunter\Scripts\PlayerController.cs" />
      <Compile Include="Assets\The Hunter\Scripts\PlayerHealthManager.cs" />
      <Compile Include="Assets\The Hunter\Scripts\PlayerStartPoint.cs" />
      <Compile Include="Assets\The Hunter\Scripts\PlayerStats.cs" />
+     <Compile Include="Assets\The Hunter\Scripts\SceneController.cs" />
      <Compile Include="Assets\The Hunter\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\The Hunter\Scripts\ScorePoints.cs" />
      <Compile Include="Assets\The Hunter\Scripts\SlimeEnemyController.cs" />

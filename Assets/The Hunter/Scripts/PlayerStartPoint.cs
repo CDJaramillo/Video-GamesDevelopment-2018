@@ -2,38 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStartPoint : MonoBehaviour {
-
+public class PlayerStartPoint : MonoBehaviour 
+{
 	private PlayerController thePlayer;
 	private CameraController theCamera;
-
 	public Vector2 startDirection;
-
-	//Where the player starts
 	public string pointName;
-
-	// Use this for initialization
-	void Start () {
-
-		//Finds and object that haves the player attached
+	void Start ()
+	{
+		//Encontrar un objeto que el jugador tenga
 		thePlayer = FindObjectOfType<PlayerController> ();
 
-		if (thePlayer.startPoint == pointName) {		
-			//I make the player start where the start point is
+		if (thePlayer.startPoint == pointName) 
+		{		
+			//Aqui hacemos que el jugador inicie donde esté un punto de inicio
 			thePlayer.transform.position = transform.position;
-			//Last player position
+			//La ultima posiicion del jugador
 			thePlayer.lastMovement = startDirection;
-
-
-			//Finds and object that haves the player attached
+			//Aqui aplicamos lo mismo pero con el script de la camara
 			theCamera = FindObjectOfType<CameraController> ();
-			//The posistion it the same, but the z it's the camera position
 			theCamera.transform.position = new Vector3 (transform.position.x, transform.position.y, theCamera.transform.position.z);
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

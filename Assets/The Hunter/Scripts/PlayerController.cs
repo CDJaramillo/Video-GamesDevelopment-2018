@@ -4,72 +4,52 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour 
 {
-
-	//Speed of the player
 	public float moveSpeed;
 	private float currentMoveSpeed;
 	public float diagonalMoveModifier;
-
-	//Player animator
 	private Animator playerAnim;
-	//Player RigidBody
 	private Rigidbody2D playerRigidBody;
-	//If the player is facing to some direction
 	private bool playerMoving;
-	//Record the las direction of the player
 	public Vector2 lastMovement;
-	//If the player exist. static makes that only the one that have the script added has the bool
 	private static bool playerExists;
-	//If the player it's attacking
 	private bool playerAttack;
 	public float playerAttackTime;
 	private float playerAttackTimeCounter;
-	//Start point of the player
 	public string startPoint;
-
-	public bool alive;
-
-	// Use this for initialization
 	void Start () {
 
-		//I get the animator in the player
+		//Se llama el componente de animator y rigidbody2d
 		playerAnim = GetComponent<Animator> ();
 		playerRigidBody = GetComponent<Rigidbody2D> ();
-		alive = true;
 		
 		if (!playerExists)
 		{
 			playerExists = true;
-			//Doesn't destroy object when the scene loads
+			//No destruir el objeto cuando cargue una nueva escena
 			DontDestroyOnLoad (transform.gameObject);
 		}
 		else 
 		{
 			Destroy (gameObject);
-			SceneManager.LoadScene(0);
 		}	
 	}
-	
-	// Update is called once per frame
 	void Update () {
 
 		playerMoving = false;
 
-		//If the player it's not attacking he does not move
-		if (!playerAttack) {		
-			//Here i make an tranlate to move the player getting the axis
-
-			//Moving to the right and the left
-			if (Input.GetAxisRaw ("Horizontal") > 0.5f || Input.GetAxisRaw ("Horizontal") < -0.5f) {
+		//Si el jugador no ataca el no accedera a la animacion de ataque
+		if (!playerAttack) 
+		{		
+			//Moviendo de derecha a izquierda
+			if (Input.GetAxisRaw ("Horizontal") > 0.5f || Input.GetAxisRaw ("Horizontal") < -0.5f) 
+			{
 				//transform.Translate (new Vector3 (Input.GetAxisRaw ("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));
-
-				//With the rigid body i don't need the tranlate and this removes the bounce with the collider
 				playerRigidBody.velocity = new Vector2 (Input.GetAxisRaw ("Horizontal") * currentMoveSpeed, playerRigidBody.velocity.y);
 				playerMoving = true;
 				lastMovement = new Vector2 (Input.GetAxisRaw ("Horizontal"), 0f);
 			}
 
-			//Moving up and Down
+			//Moviendo de arriba a abajo
 			if (Input.GetAxisRaw ("Vertical") > 0.5f || Input.GetAxisRaw ("Vertical") < -0.5f) {
 				//transform.Translate (new Vector3 (0f, Input.GetAxisRaw ("Vertical") * moveSpeed * Time.deltaTime, 0f));
 
@@ -78,42 +58,46 @@ public class PlayerController : MonoBehaviour
 				lastMovement = new Vector2 (0f, Input.GetAxisRaw ("Vertical"));
 			}
 
-			//If the player it's not moving it stops
+			//Si el jugador no se mueve este se detiene
 			if (Input.GetAxisRaw ("Horizontal") < 0.5f && Input.GetAxisRaw ("Horizontal") > -0.5f)
 				playerRigidBody.velocity = new Vector2 (0f, playerRigidBody.velocity.y);
 
 			if (Input.GetAxisRaw ("Vertical") < 0.5f && Input.GetAxisRaw ("Vertical") > -0.5f)
 				playerRigidBody.velocity = new Vector2 (playerRigidBody.velocity.x, 0f);
 
-			//If i press Z he attacks
-			if (Input.GetKeyDown (KeyCode.Z)) {
+			//Si presiono Z el personaje atacará
+			if (Input.GetKeyDown (KeyCode.Z)) 
+			{
 				playerAttackTimeCounter = playerAttackTime;
 				playerAttack = true;
 				playerRigidBody.velocity = Vector2.zero;
 				playerAnim.SetBool ("PlayerAttacking", true);
 			}
 
-			//Takes the valor of the axis and return in absolute, so i know if it's 1 or 0
-			if (Mathf.Abs (Input.GetAxisRaw ("Horizontal")) > 0.5f && Mathf.Abs (Input.GetAxisRaw ("Vertical")) > 0.5f) {
-				//If there's any movement will slow 'cause we're moving diagonal
+			//Toma el valor del axis y lo convierte en un valor de 0 o 1, así sabremos cual esta tomando
+			if (Mathf.Abs (Input.GetAxisRaw ("Horizontal")) > 0.5f && Mathf.Abs (Input.GetAxisRaw ("Vertical")) > 0.5f) 
+			{
+				//Esto hará que el personaje se mueva diagonalmente
 				currentMoveSpeed = moveSpeed * diagonalMoveModifier;
 			}
-			else {
+			else 
+			{
 				currentMoveSpeed = moveSpeed;
 			}
 		}
 
-		//When the counter it's greater he will go back to 0
-		if(playerAttackTimeCounter > 0){
+		//Cuando el contador incrementa el volvera a 0
+		if(playerAttackTimeCounter > 0)
+		{
 			playerAttackTimeCounter -= Time.deltaTime;
 		}
-		//Resets the player Animation
+		//Reinicia la animacion de ataque del jugador
 		if (playerAttackTimeCounter <= 0){
 			playerAttack = false;
 			playerAnim.SetBool ("PlayerAttacking", false);
 		}
 
-		//Here it's where i ser the animator
+		//atributos para poner en el animator
 		playerAnim.SetFloat ("MoveX", Input.GetAxisRaw ("Horizontal"));
 		playerAnim.SetFloat ("MoveY", Input.GetAxisRaw ("Vertical"));
 		playerAnim.SetBool ("PlayerMoving", playerMoving);

@@ -7,7 +7,9 @@ public class PauseMenu : MonoBehaviour
 	public string mainMenu;
 	public bool isPaused;
 	public GameObject pausedMenuCanvas;
-
+	//Si se presiona la tecla ESC el juego se pausará y el tiempo del juego se detendrá mientras navegamos en el menu de pausa
+	//Si se sale del menu de pausa el juego se resume para continuar jugando
+	//Si en el menu de pausa se presiona salir, el juego se cerrará automáticamente
 	public void Update ()
 	{
 		if (this.isPaused) 
@@ -30,7 +32,7 @@ public class PauseMenu : MonoBehaviour
 	public void Resume ()
 	{
 		this.isPaused = false;
-	}		
+	}	
 	public void ExitGame ()
 	{
 		Application.Quit();
