@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\The Hunter\Scripts\AttackEnemy.cs" />
+     <Compile Include="Assets\The Hunter\Scripts\AudioController.cs" />
      <Compile Include="Assets\The Hunter\Scripts\CameraController.cs" />
      <Compile Include="Assets\The Hunter\Scripts\DestroyOverTime.cs" />
      <Compile Include="Assets\The Hunter\Scripts\EnemyHealthManager.cs" />
@@ -65,6 +66,7 @@
      <Compile Include="Assets\The Hunter\Scripts\ScorePoints.cs" />
      <Compile Include="Assets\The Hunter\Scripts\SlimeEnemyController.cs" />
      <Compile Include="Assets\The Hunter\Scripts\UIManager.cs" />
+     <Compile Include="Assets\The Hunter\Scripts\Werewolf.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SpriteDepthInMap.cs" />

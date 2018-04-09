@@ -12,8 +12,11 @@ public class PlayerHealthManager : MonoBehaviour
 	public float flashLength;
 	private float countFlashLength;
 	private SpriteRenderer playerSpriteRenderer;
+	public AudioSource hurt;
+	public AudioClip hurtClip;
 	void Start () 
 	{
+		hurt = GetComponent<AudioSource>();
 		//Vida inicial del jugador
 		playerCurrentHealth = playerMaxHealth;
 		playerSpriteRenderer = GetComponent<SpriteRenderer> ();
@@ -57,7 +60,8 @@ public class PlayerHealthManager : MonoBehaviour
 	{
 		//Cuando el jugador toca un enemigo recibe daño
 		playerCurrentHealth -= damageToGive;
-
+		hurt.clip = hurtClip;
+		hurt.Play();
 		flashActive = true;
 		countFlashLength = flashLength;
 	}

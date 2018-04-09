@@ -16,8 +16,11 @@ public class PlayerController : MonoBehaviour
 	public float playerAttackTime;
 	private float playerAttackTimeCounter;
 	public string startPoint;
-	void Start () {
-
+	public AudioClip sword;
+	public AudioSource swordAttack;
+	void Start () 
+	{
+		swordAttack = GetComponent<AudioSource>();
 		//Se llama el componente de animator y rigidbody2d
 		playerAnim = GetComponent<Animator> ();
 		playerRigidBody = GetComponent<Rigidbody2D> ();
@@ -66,10 +69,12 @@ public class PlayerController : MonoBehaviour
 				playerRigidBody.velocity = new Vector2 (playerRigidBody.velocity.x, 0f);
 
 			//Si presiono Z el personaje atacará
-			if (Input.GetKeyDown (KeyCode.Z)) 
+			if (Input.GetKeyDown (KeyCode.Z) || Input.GetKeyDown (KeyCode.Mouse0)) 
 			{
 				playerAttackTimeCounter = playerAttackTime;
 				playerAttack = true;
+				swordAttack.clip = sword;
+				swordAttack.Play();
 				playerRigidBody.velocity = Vector2.zero;
 				playerAnim.SetBool ("PlayerAttacking", true);
 			}
@@ -92,7 +97,8 @@ public class PlayerController : MonoBehaviour
 			playerAttackTimeCounter -= Time.deltaTime;
 		}
 		//Reinicia la animacion de ataque del jugador
-		if (playerAttackTimeCounter <= 0){
+		if (playerAttackTimeCounter <= 0)
+		{
 			playerAttack = false;
 			playerAnim.SetBool ("PlayerAttacking", false);
 		}

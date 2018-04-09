@@ -297,7 +297,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: You are Hak an intrepid hunter of monsters, your goal is to survive and
-    make the best score, you only have one life, as you destroy enemies you cand level
+    make the best score, you only have one life, as you destroy enemies you can level
     up making your strength, defense and HP increase.
 --- !u!222 &240301445
 CanvasRenderer:

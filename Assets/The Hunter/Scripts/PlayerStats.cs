@@ -15,7 +15,8 @@ public class PlayerStats : MonoBehaviour
     public int currentDefense;
     private PlayerHealthManager playerHealthManager;
     //Definimos los arrays de los niveles y demas atributos del personaje
-	void Start () {
+	void Start () 
+    {
         currentHP = hpLevels[1];
         currentAttack = attackLevels[1];
         currentDefense = defenseLevels[1];
@@ -36,7 +37,8 @@ public class PlayerStats : MonoBehaviour
 		currentExp += expToAdd;
 	}
 
-    public void LevelUp() {
+    public void LevelUp() 
+    {
         playerCurrentLevel++;
         currentHP = hpLevels[playerCurrentLevel];
 
