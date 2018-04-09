@@ -22,11 +22,11 @@ namespace Tiled2Unity
         public void MaterialImported(string materialPath)
         {
             // Find the import behaviour that was waiting on this material to be imported
-            string asset = Path.GetFileName(materialPath);
+            string asset = System.IO.Path.GetFileName(materialPath);
             foreach (var importComponent in ImportBehaviour.EnumerateImportBehaviors_ByWaitingMaterial(asset))
             {
                 // The material has finished loading. Keep track of that status.
-                if (!importComponent.ImportComplete_Materials.Contains(asset))
+                if (!importComponent.ImportComplete_Materials.Contains(asset, StringComparer.OrdinalIgnoreCase))
                 {
                     importComponent.ImportComplete_Materials.Add(asset);
                 }
@@ -64,7 +64,7 @@ namespace Tiled2Unity
                 string choices = String.Join("\n  ", assignMaterials.Select(m => m.Attribute("mesh").Value).ToArray());
                 builder.AppendFormat("Choices are:\n  {0}", choices);
 
-                Debug.LogError(builder.ToString());
+                importBehavior.RecordError(builder.ToString());
                 return null;
             }
 
@@ -75,7 +75,7 @@ namespace Tiled2Unity
             UnityEngine.Material material = AssetDatabase.LoadAssetAtPath(materialPath, typeof(UnityEngine.Material)) as UnityEngine.Material;
             if (material == null)
             {
-                Debug.LogError(String.Format("Could not find material: {0}", materialName));
+                importBehavior.RecordError("Could not find material: {0}", materialName);
             }
 
             return material;
@@ -90,19 +90,21 @@ namespace Tiled2Unity
 
                 string textureFile = ImportUtils.GetAttributeAsString(xmlTexture, "filename");
                 string materialPath = MakeMaterialAssetPath(textureFile, isResource);
-                string materialFile = Path.GetFileName(materialPath);
+                string materialFile = System.IO.Path.GetFileName(materialPath);
 
                 // Keep track that we importing this material
-                importComponent.ImportWait_Materials.Add(materialFile);
+                if (!importComponent.ImportWait_Materials.Contains(materialFile, StringComparer.OrdinalIgnoreCase))
+                {
+                    importComponent.ImportWait_Materials.Add(materialFile);
+                }
 
                 // Create the material
-                UnityEngine.Material material = CreateMaterialFromXml(xmlTexture);
+                UnityEngine.Material material = CreateMaterialFromXml(xmlTexture, importComponent);
 
                 // Assign the texture to the material
                 {
                     string textureAsset = GetTextureAssetPath(textureFile);
-                    Texture2D texture2d = AssetDatabase.LoadAssetAtPath(textureAsset, typeof(Texture2D)) as Texture2D;
-                    material.SetTexture("_MainTex", texture2d);
+                    AssignTextureAssetToMaterial(material, materialFile, textureAsset, importComponent);
                 }
 
                 ImportUtils.ReadyToWrite(materialPath);
@@ -116,21 +118,28 @@ namespace Tiled2Unity
                 bool isResource = ImportUtils.GetAttributeAsBoolean(xmlInternal, "isResource", false);
 
                 string textureAsset = ImportUtils.GetAttributeAsString(xmlInternal, "assetPath");
-                string textureFile = Path.GetFileName(textureAsset);
+                string textureFile = System.IO.Path.GetFileName(textureAsset);
                 string materialPath = MakeMaterialAssetPath(textureFile, isResource);
-                string materialFile = Path.GetFileName(materialPath);
 
-                // Keep track that we importing this material
-                importComponent.ImportWait_Materials.Add(materialFile);
-
-                // Create the material
-                UnityEngine.Material material = CreateMaterialFromXml(xmlInternal);
-
-                // Assign the texture to the material
+                // "Internal textures" may have a unique material name that goes with it
+                string uniqueMaterialName = ImportUtils.GetAttributeAsString(xmlInternal, "materialName", "");
+                if (!String.IsNullOrEmpty(uniqueMaterialName))
                 {
-                    Texture2D texture2d = AssetDatabase.LoadAssetAtPath(textureAsset, typeof(Texture2D)) as Texture2D;
-                    material.SetTexture("_MainTex", texture2d);
+                    materialPath = String.Format("{0}/{1}{2}", Path.GetDirectoryName(materialPath), uniqueMaterialName, Path.GetExtension(materialPath));
+                    materialPath = materialPath.Replace(System.IO.Path.DirectorySeparatorChar, '/');
                 }
+
+                string materialFile = System.IO.Path.GetFileName(materialPath);
+
+                // Keep track that we are importing this material
+                if (!importComponent.ImportWait_Materials.Contains(materialFile, StringComparer.OrdinalIgnoreCase))
+                {
+                    importComponent.ImportWait_Materials.Add(materialFile);
+                }
+
+                // Create the material and assign the texture
+                UnityEngine.Material material = CreateMaterialFromXml(xmlInternal, importComponent);
+                AssignTextureAssetToMaterial(material, materialFile, textureAsset, importComponent);
 
                 ImportUtils.ReadyToWrite(materialPath);
                 ImportUtils.CreateOrReplaceAsset(material, materialPath);
@@ -142,6 +151,16 @@ namespace Tiled2Unity
             {
                 ImportAllMeshes(importComponent);
             }
+        }
+
+        private void AssignTextureAssetToMaterial(Material material, string materialFile, string textureAsset, ImportBehaviour importComponent)
+        {
+            Texture2D texture2d = AssetDatabase.LoadAssetAtPath(textureAsset, typeof(Texture2D)) as Texture2D;
+            if (texture2d == null)
+            {
+                importComponent.RecordError("Error creating material '{0}'. Texture was not found: {1}", materialFile, textureAsset);
+            }
+            material.SetTexture("_MainTex", texture2d);
         }
     }
 }

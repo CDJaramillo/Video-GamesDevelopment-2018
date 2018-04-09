@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/The Hunter/Scenes/MainMenu.unity
+- path: Assets/The Hunter/Scenes/Test.unity
   isLoaded: 1
   isActive: 1
