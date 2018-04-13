@@ -10,6 +10,7 @@ public class HurtPlayer : MonoBehaviour
 	public GameObject damageNumber;
     private int currentDamage;
     private PlayerStats playerstats;
+	//Hacemos un llamado al script de las estadisticas del jugador
 	void Start () 
 	{
         playerstats = FindObjectOfType<PlayerStats>();
@@ -30,14 +31,6 @@ public class HurtPlayer : MonoBehaviour
 			//Muestra el numero de daño que ocacionan los enemigos
 			var clone = (GameObject)Instantiate(damageNumber, collider.transform.position, Quaternion.Euler(Vector3.zero));
 			clone.GetComponent<FloatingNumbers> ().damageNumber = currentDamage;
-		}
-	}
-
-	public void Death()
-	{
-		if(SceneManager.GetActiveScene().buildIndex > 0)
-		{
-			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 	}
 }

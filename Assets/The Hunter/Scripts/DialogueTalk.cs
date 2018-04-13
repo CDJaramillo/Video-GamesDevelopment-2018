@@ -28,7 +28,7 @@ public class DialogueTalk : MonoBehaviour
 					dMan.currentLine = 0;
 					dMan.ShowDialogue();
 				}
-
+				//Y aqui haremos que al momento de hablar con el NPC este no se mueva hasta que dejemos de hablar
 				if(transform.parent.GetComponent<NPCMovement>() != null)
 				{
 					transform.parent.GetComponent<NPCMovement>().canMove = false;

@@ -51,7 +51,7 @@ public class AttackEnemy : MonoBehaviour
 			clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
 		}
 
-		if(collision.gameObject.tag == "Skeleton")
+		if(collision.gameObject.tag == "SuperSlime")
 		{
 			currentDamage = damageToGive + playerStats.currentAttack;
 			collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);

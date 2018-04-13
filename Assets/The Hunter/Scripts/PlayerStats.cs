@@ -36,7 +36,8 @@ public class PlayerStats : MonoBehaviour
     {
 		currentExp += expToAdd;
 	}
-
+	//Cuando el personaje sube de nivel tanto el ataque, defensa y vida se verán afectados
+	//Dandole mas vitalidad, fuera y defensa a nuestro personaje y asi sobrevivir mas
     public void LevelUp() 
     {
         playerCurrentLevel++;

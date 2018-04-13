@@ -16,6 +16,8 @@ public class NPCMovement : MonoBehaviour
 	private DialogueManager theDM;
 	//Aqui declaramos para que el NPC camine a x cantidad de segundos y se pueda desplazar
 	//Llamamos el metodo de elegir direcion, asi podrá moverse a cualquier dirección
+	//Asi mismo haremos uso del script de dialogos
+	//tambien haremos que al hablar con el, este se detenga
 	void Start () 
 	{
 		myRigid = GetComponent<Rigidbody2D>();
@@ -25,6 +27,8 @@ public class NPCMovement : MonoBehaviour
 		ChooseDir();
 		canMove = true;
 	}
+	//En un if le vamos a decir que cuando hablemos con el este no se mueva
+	//Dentro del switch le vamos asignar unos casos para que el personaje se pueda mover en cuatro direcciones
 	void Update () 
 	{
 		if (!theDM.dActive)

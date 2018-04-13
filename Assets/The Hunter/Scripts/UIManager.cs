@@ -22,12 +22,13 @@ public class UIManager : MonoBehaviour
 		{
 			Destroy (gameObject);
 		}
-
+		//Haremos uso de las estadisticas del jugador
 		thePlayerStats = GetComponent<PlayerStats> ();
 	}
 	void Update () 
 	{
 		//La barra de salud hace referencia al script de vida del personaje
+		//Asi mismo al sistema de nveles
 		healthBar.maxValue = playerHealth.playerMaxHealth;
 		healthBar.value = playerHealth.playerCurrentHealth;
 		HPtext.text = "HP: " + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;

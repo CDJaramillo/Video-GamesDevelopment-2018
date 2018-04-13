@@ -71,7 +71,6 @@
      <Compile Include="Assets\The Hunter\Scripts\ScorePoints.cs" />
      <Compile Include="Assets\The Hunter\Scripts\SlimeEnemyController.cs" />
      <Compile Include="Assets\The Hunter\Scripts\UIManager.cs" />
-     <Compile Include="Assets\The Hunter\Scripts\Werewolf.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\CircleObject.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GPUInstancing.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\GameObjectExtensions.cs" />

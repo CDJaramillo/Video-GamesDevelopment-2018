@@ -12,13 +12,8 @@ public class QuestObject : MonoBehaviour
 	public string targetEnemy;
 	public int enemiesToKill;
 	private int enemyCount;
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
-	
-	// Update is called once per frame
+	// En el update vamos a realizar el procedimiento para crear las quest de cacería
+	//Así mismo que cuente la cantidad de enemigos que llevamos y así culminar la misión
 	void Update () 
 	{
 		if (isEnemyQuest) 
@@ -35,12 +30,12 @@ public class QuestObject : MonoBehaviour
 			}
 		}
 	}
-
+	//Al iniciar la misión por medio de un trigger saldrá un texto en pantalla indicando el objetivo
 	public void StartQuest()
 	{
 		theQM.ShowQuestText(startText);
 	}
-
+	//Al finalizar la misión dirá que la misión fue un éxito
 	public void EndQuest()
 	{
 		theQM.ShowQuestText(endText);

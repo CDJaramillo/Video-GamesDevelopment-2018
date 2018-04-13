@@ -9,17 +9,14 @@ public class QuestTrigger : MonoBehaviour
 	public bool startQuest;
 	public bool endQuest;
 
-	// Use this for initialization
+	// buscamos el script de questmanager, este será el que almacene las misiones
+	//Este script es un activado de misiones al tocar un collider del NPC
 	void Start () 
 	{
 		theQM = FindObjectOfType<QuestManager> ();	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+	//En el ontrigger decimos que si el jugador colisiona con el collider
+	//La mision empezará mostrando un texto en pantalla haciendo referencia al quest manager
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.gameObject.name == "Player") 
@@ -38,6 +35,5 @@ public class QuestTrigger : MonoBehaviour
 				}
 			}
 		}
-	}
-		
+	}		
 }

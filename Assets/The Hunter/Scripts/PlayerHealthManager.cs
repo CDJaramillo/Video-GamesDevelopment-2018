@@ -30,7 +30,7 @@ public class PlayerHealthManager : MonoBehaviour
 
 		if(flashActive) 
 		{
-		//Aqu haremos que el jugador parpadee cuando recibe daño
+			//Aqui haremos que el jugador parpadee cuando recibe daño
 			//Si el contador es mayor a 1.66 segundos el sprite renderer del jugador vuelve a 0
 			if(countFlashLength > flashLength * .66f) 
 			{
@@ -59,18 +59,19 @@ public class PlayerHealthManager : MonoBehaviour
 	public void HurtPlayer (int damageToGive) 
 	{
 		//Cuando el jugador toca un enemigo recibe daño
+		//Si recibe daño parpadea por unos segundos dandole ese lapso de invunerabilidad
 		playerCurrentHealth -= damageToGive;
 		hurt.clip = hurtClip;
 		hurt.Play();
 		flashActive = true;
 		countFlashLength = flashLength;
 	}
-
+	//aqui le damos la maxima salud al jugador
 	public void SetMaxHealth () 
 	{
 		playerCurrentHealth = playerMaxHealth;
 	}
-
+	//Si la vida del jugador llega a 0 el jugador muere
 	public void KillPlayer()
 	{
 		playerCurrentHealth = playerMaxHealth = 0;

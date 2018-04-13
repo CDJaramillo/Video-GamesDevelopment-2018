@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 	void Start () 
 	{
 		swordAttack = GetComponent<AudioSource>();
-		//Se llama el componente de animator y rigidbody2d
+		//Se llama el componente de animator y rigidbody2d y el audiosource
 		playerAnim = GetComponent<Animator> ();
 		playerRigidBody = GetComponent<Rigidbody2D> ();
 		
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 		{
 			Destroy (gameObject);
 		}	
-
+		//Cuando el personaje dialogue con los NPC este tampoco se podrá mover
 		canMove = true;
 	}
 	void Update () 

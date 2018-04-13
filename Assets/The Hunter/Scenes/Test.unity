@@ -323,13 +323,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: Awww
   dialogueLines:
-  - Please help ups.
+  - Please help us.
   - The monsters are to powerfull for us.
   - You as a good hunter you can destroy them!.
   - I ask you a favor.
-  - Please destroy 5 Ghosts for me.
-  - They are spooky for me.
-  - Try to get more strenght and slay the evil Werewolf.
+  - Is a risk to go to the city.
+  - But if you do it.
+  - You get more strenght and slay the evil Werewolf.
   - The Werewolf is a powerfull monster, so if you need to retreat you can go back
     to this site.
   - The monsters respawn again.
@@ -1581,10 +1581,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questNumber: 3
   theQM: {fileID: 383876521}
-  startText: Destroy the evil Skeleton.
+  startText: Destroy 1 Super  Slime
   endText: Quest complete, you did it!.
   isEnemyQuest: 1
-  targetEnemy: Skeleton
+  targetEnemy: SuperSlime
   enemiesToKill: 1
 --- !u!1 &325312897
 GameObject:
@@ -2100,21 +2100,6 @@ Prefab:
       propertyPath: m_Name
       value: Slime (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: expToGive
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyExplosion
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyDeath
-      value: 
-      objectReference: {fileID: 8300000, guid: a63cff99eff5dd24fad578abade3658b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
   m_IsPrefabParent: 0
@@ -2384,8 +2369,8 @@ MonoBehaviour:
   - I am very tired.
   - Don't disturb me.
   - But I give you a quest.
-  - Slay the Skeleton.
   - Ouch! My head, time to sleep.
+  - Clear the quest.
 --- !u!61 &479199879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2799,46 +2784,7 @@ Prefab:
       propertyPath: m_Name
       value: Slime (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: puntos
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: ghost
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: puntaje
-      value: 
-      objectReference: {fileID: 2006275545}
-    - target: {fileID: 1185379385395344, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-      propertyPath: m_TagString
-      value: Slime
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: expToGive
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyExplosion
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyDeath
-      value: 
-      objectReference: {fileID: 8300000, guid: a63cff99eff5dd24fad578abade3658b, type: 3}
-    m_RemovedComponents:
-    - {fileID: 114013889891058602, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114651775149608518, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114894588058049280, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114117170067133526, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &535724043
@@ -3227,6 +3173,82 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!1 &623793216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 623793217}
+  - component: {fileID: 623793219}
+  - component: {fileID: 623793218}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &623793217
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623793216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1715863443}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -89, y: 22}
+  m_SizeDelta: {x: 178, y: 45}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &623793218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623793216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'ESC to Pause
+
+    SPACE near a NPC to talk'
+--- !u!222 &623793219
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623793216}
 --- !u!1 &639827900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5377,8 +5399,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 264955677}
   m_HandleRect: {fileID: 1549148243}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: -50
+  m_MaxValue: 50
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -6105,6 +6127,7 @@ MonoBehaviour:
   - You can enter by your own risk if you enter in the camp
   - But one advice, there are dangerous monsters inside
   - If you die you can't return
+  - Try to banish those Ghost.
   - Well... Good luck, you gonna need it
 --- !u!61 &1310602700
 BoxCollider2D:
@@ -7795,7 +7818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -129.5, y: -15}
+  m_AnchoredPosition: {x: -115.90001, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1656312538
@@ -7979,46 +8002,7 @@ Prefab:
       propertyPath: m_Name
       value: Slime (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: puntos
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: ghost
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: puntaje
-      value: 
-      objectReference: {fileID: 2006275545}
-    - target: {fileID: 1185379385395344, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-      propertyPath: m_TagString
-      value: Slime
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: expToGive
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyExplosion
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyDeath
-      value: 
-      objectReference: {fileID: 8300000, guid: a63cff99eff5dd24fad578abade3658b, type: 3}
-    m_RemovedComponents:
-    - {fileID: 114651775149608518, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114013889891058602, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114894588058049280, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114117170067133526, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1701084357
@@ -8207,6 +8191,7 @@ RectTransform:
   - {fileID: 1701084360}
   - {fileID: 58016987}
   - {fileID: 383876520}
+  - {fileID: 623793217}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8229,9 +8214,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCurrentLevel: 0
   currentExp: 0
-  toLevelUp: 00000000060000001800000028000000460000006400000082000000aa000000c8000000fa000000
-  hpLevels: 1e000000320000005000000078000000a0000000c8000000f0000000180100004001000090010000
-  attackLevels: 0300000006000000090000000f0000001200000015000000180000001b0000001e00000032000000
+  toLevelUp: 00000000060000001800000028000000460000006400000082000000aa000000c8000000fa0000002c0100005e01000090010000c2010000f401000026020000580200008a020000bc020000ee0200008403000098030000ac030000c0030000d4030000
+  hpLevels: 1e000000320000005000000078000000a0000000c8000000f00000001801000040010000900100009a010000a4010000ae010000b8010000c2010000cc010000d6010000e0010000ea010000f4010000fe01000008020000120200001c02000026020000
+  attackLevels: 0300000006000000090000000c0000000f0000001200000015000000180000001b0000001e0000002100000024000000270000002a0000002d000000300000003200000035000000380000003b0000003e00000041000000440000004700000049000000
   defenseLevels: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
   currentHP: 0
   currentAttack: 0
@@ -8740,11 +8725,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4472176391973732, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -174.14
+      value: -174.7
       objectReference: {fileID: 0}
     - target: {fileID: 4472176391973732, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -89.97
+      value: -90.41
       objectReference: {fileID: 0}
     - target: {fileID: 4472176391973732, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8770,21 +8755,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: expToGive
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyExplosion
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyDeath
-      value: 
-      objectReference: {fileID: 8300000, guid: a63cff99eff5dd24fad578abade3658b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
   m_IsPrefabParent: 0
@@ -9202,8 +9172,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 949021687}
   m_HandleRect: {fileID: 437175799}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: -50
+  m_MaxValue: 50
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -9671,46 +9641,7 @@ Prefab:
       propertyPath: m_Name
       value: Slime (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: puntos
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: ghost
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: puntaje
-      value: 
-      objectReference: {fileID: 2006275545}
-    - target: {fileID: 1185379385395344, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-      propertyPath: m_TagString
-      value: Slime
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: expToGive
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyExplosion
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114809982053456380, guid: 1c7f9eec0d8b92d4285fc295231b0a26,
-        type: 2}
-      propertyPath: enemyDeath
-      value: 
-      objectReference: {fileID: 8300000, guid: a63cff99eff5dd24fad578abade3658b, type: 3}
-    m_RemovedComponents:
-    - {fileID: 114651775149608518, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114013889891058602, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114894588058049280, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114117170067133526, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
-    - {fileID: 114044123698811920, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c7f9eec0d8b92d4285fc295231b0a26, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1964031110
@@ -9829,7 +9760,7 @@ MonoBehaviour:
   dialogue: Hi you are Hak
   dialogueLines:
   - Hi, you... are Hak? The famous Hunter?
-  - I am Bars!!!.
+  - I am Cristian!!!.
   - I am  here to explain you how to play.
   - Use W,A,S,D or Arrow Keys to move around the world.
   - You can attack! Press Z key or Mouse Right Button to use your sword.
@@ -9837,8 +9768,7 @@ MonoBehaviour:
   - If you want to pause the game press ESC key, you can exit the game and change
     the audio of the game.
   - There are other hunters who offers hunt quest.
-  - This is my quest.
-  - Slay the slimes in this camp.
+  - I give you a quest
   - Well.. see you later!!.
 --- !u!1 &2003185106
 GameObject:

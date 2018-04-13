@@ -10,7 +10,7 @@ public class PlayerStartPoint : MonoBehaviour
 	public string pointName;
 	void Start ()
 	{
-		//Encontrar un objeto que el jugador tenga
+		//Encontrar un objeto que el jugador tenga en este caso la movilidad del personaje
 		thePlayer = FindObjectOfType<PlayerController> ();
 
 		if (thePlayer.startPoint == pointName) 

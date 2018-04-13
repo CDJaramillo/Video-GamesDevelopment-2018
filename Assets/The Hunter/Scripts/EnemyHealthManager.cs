@@ -34,7 +34,7 @@ public class EnemyHealthManager : MonoBehaviour
 		//Cuando el jugador toca el enemigo este sufrirá daño
 		enemyCurrentHealth -= damageToGive;
 	}
-
+	//Aqui le damos la maxima salud al enemigo
 	public void SetMaxHealth () 
 	{
 		enemyCurrentHealth = enemyMaxHealth;

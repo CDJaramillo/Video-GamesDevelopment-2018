@@ -10,6 +10,7 @@ TagManager:
   - Slime
   - Werewolf
   - Skeleton
+  - SuperSlime
   layers:
   - Default
   - TransparentFX

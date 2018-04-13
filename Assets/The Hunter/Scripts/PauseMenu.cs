@@ -29,10 +29,12 @@ public class PauseMenu : MonoBehaviour
 			this.isPaused = !this.isPaused;
 		}
 	}
+	//El booleano se volvera falso y podremos seguir con la partida
 	public void Resume ()
 	{
 		this.isPaused = false;
 	}	
+	//Al presionar el boton de salir el juego saldrá automáticamente
 	public void ExitGame ()
 	{
 		Application.Quit();

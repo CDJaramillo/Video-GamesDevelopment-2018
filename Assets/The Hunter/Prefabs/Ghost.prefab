@@ -40,9 +40,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1686451348176208}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.62, y: 5.13, z: 0}
-  m_LocalScale: {x: 0.1348365, y: 0.16354372, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 11.6, z: 10}
+  m_LocalScale: {x: 0.13484, y: 0.16353999, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMaxHealth: 50
   enemyCurrentHealth: 0
-  expToGive: 1
+  expToGive: 10
   enemyQuestName: Ghost
 --- !u!114 &114056386034541432
 MonoBehaviour:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552d20a008c1dfd4ca38e7daebed32b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToGive: 10
+  damageToGive: 6
   damageNumber: {fileID: 1585930033598536, guid: e744a0cca4fa58e4c8466634d637b067,
     type: 2}
 --- !u!114 &114406409305087660
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a19cb96d003b945a861fc36de3604b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsToAdd: 10
+  pointsToAdd: 100
 --- !u!212 &212186904190526318
 SpriteRenderer:
   m_ObjectHideFlags: 1
