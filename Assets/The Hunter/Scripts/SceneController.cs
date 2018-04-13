@@ -18,5 +18,6 @@ public class SceneController : MonoBehaviour
 		SceneManager.LoadScene("HowToPlay");
 		SceneManager.LoadScene("Controls");
 		SceneManager.LoadScene("Settings");
+		SceneManager.LoadScene("Bestiary");
 	}
 }

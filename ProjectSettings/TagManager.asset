@@ -8,7 +8,8 @@ TagManager:
   - World
   - Ghost
   - Slime
-  - ShowOnPause
+  - Werewolf
+  - Skeleton
   layers:
   - Default
   - TransparentFX

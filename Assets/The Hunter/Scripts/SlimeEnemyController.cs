@@ -70,7 +70,6 @@ public class SlimeEnemyController : MonoBehaviour
 			waitToReload -= Time.deltaTime;
 			if(waitToReload < 0) 
 			{
-				Application.LoadLevel (Application.loadedLevel);
 				thePlayer.SetActive (true);
 			}
 		}
@@ -84,7 +83,6 @@ public class SlimeEnemyController : MonoBehaviour
 		{
 			//Deactivates the player
 			collider.gameObject.SetActive (false);
-			Debug.Log ("You Hit me, man...");
 			reloading = true;
 			thePlayer = collider.gameObject;
 		}*/

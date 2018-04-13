@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 	public string startPoint;
 	public AudioClip sword;
 	public AudioSource swordAttack;
+	public bool canMove;
 	void Start () 
 	{
 		swordAttack = GetComponent<AudioSource>();
@@ -35,11 +36,18 @@ public class PlayerController : MonoBehaviour
 		{
 			Destroy (gameObject);
 		}	
+
+		canMove = true;
 	}
-	void Update () {
-
+	void Update () 
+	{
 		playerMoving = false;
-
+		//Al momento de hablar con los NPC el jugador tambien se quedará quieto
+		if(!canMove)
+		{
+			playerRigidBody.velocity = Vector2.zero;
+			return;
+		}
 		//Si el jugador no ataca el no accedera a la animacion de ataque
 		if (!playerAttack) 
 		{		
@@ -51,7 +59,6 @@ public class PlayerController : MonoBehaviour
 				playerMoving = true;
 				lastMovement = new Vector2 (Input.GetAxisRaw ("Horizontal"), 0f);
 			}
-
 			//Moviendo de arriba a abajo
 			if (Input.GetAxisRaw ("Vertical") > 0.5f || Input.GetAxisRaw ("Vertical") < -0.5f) {
 				//transform.Translate (new Vector3 (0f, Input.GetAxisRaw ("Vertical") * moveSpeed * Time.deltaTime, 0f));
@@ -69,7 +76,7 @@ public class PlayerController : MonoBehaviour
 				playerRigidBody.velocity = new Vector2 (playerRigidBody.velocity.x, 0f);
 
 			//Si presiono Z el personaje atacará
-			if (Input.GetKeyDown (KeyCode.Z) || Input.GetKeyDown (KeyCode.Mouse0)) 
+			if (Input.GetKeyDown (KeyCode.Z) || Input.GetKeyDown (KeyCode.Mouse1)) 
 			{
 				playerAttackTimeCounter = playerAttackTime;
 				playerAttack = true;

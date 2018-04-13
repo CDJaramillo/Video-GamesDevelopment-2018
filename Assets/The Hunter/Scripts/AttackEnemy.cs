@@ -35,12 +35,29 @@ public class AttackEnemy : MonoBehaviour
 		if (collision.gameObject.tag == "Slime")
 		{
             currentDamage = damageToGive + playerStats.currentAttack;
-
             //Destroy (collision.gameObject);
             collision.gameObject.GetComponent<EnemyHealthManager> ().HurtEnemy(currentDamage);
 			Instantiate (damageBurst, hitPoint.position, hitPoint.rotation);
 			var clone = (GameObject)Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
 			clone.GetComponent<FloatingNumbers> ().damageNumber = currentDamage;
+		}
+
+		if (collision.gameObject.tag == "Werewolf")
+		{
+			currentDamage = damageToGive + playerStats.currentAttack;
+			collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
+			Instantiate (damageBurst, hitPoint.position, hitPoint.rotation);
+			var clone = (GameObject)Instantiate(damageNumber, hitPoint.position , Quaternion.Euler(Vector3.zero));
+			clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
+		}
+
+		if(collision.gameObject.tag == "Skeleton")
+		{
+			currentDamage = damageToGive + playerStats.currentAttack;
+			collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
+			Instantiate (damageBurst, hitPoint.position, hitPoint.rotation);
+			var clone = (GameObject)Instantiate(damageNumber, hitPoint.position , Quaternion.Euler(Vector3.zero));
+			clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
 		}
 	}
 }

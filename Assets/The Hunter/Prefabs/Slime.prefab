@@ -140,6 +140,7 @@ MonoBehaviour:
   enemyMaxHealth: 5
   enemyCurrentHealth: 0
   expToGive: 1
+  enemyQuestName: Slime
 --- !u!114 &114913329731532972
 MonoBehaviour:
   m_ObjectHideFlags: 1

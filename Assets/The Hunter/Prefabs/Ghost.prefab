@@ -113,6 +113,7 @@ MonoBehaviour:
   enemyMaxHealth: 50
   enemyCurrentHealth: 0
   expToGive: 1
+  enemyQuestName: Ghost
 --- !u!114 &114056386034541432
 MonoBehaviour:
   m_ObjectHideFlags: 1
