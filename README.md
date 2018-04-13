@@ -56,10 +56,6 @@ You may merge the Pull Request in once you have the sign-off of two other develo
 
 * **Christian David Hurtado Monroy** - *Level Design* - [Second level](https://www.behance.net/christian_hurtado) thanks my friend for the level.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
 * Inspiration
