@@ -30,11 +30,11 @@ The game is a 2D RPG game where you can move in two scenes and kill monsters, al
 
 ### Break down into end to end tests
 
-I make to .exe of the game the first .exe was the firs beta where did i collect feedback with three friends and father and I made notes to add before delivery, leave for future updates and discard 
+I make two .exe of the game the first .exe was the first beta where did i collect feedback with three friends and father and I made notes to add before delivery, leave for future updates and discard 
 
 ## Built With
 
-* [Unity](https://unity3d.com/es) - The game engine.
+* [Unity](https://unity3d.com/es)
 * [Tiled2Unity plugin](http://www.seanba.com/tiled2unity)
 * [Tiled Map Editor](http://www.mapeditor.org/)
 
@@ -65,5 +65,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Inspiration
 * Motivation
 * Studies
-* [Alejandro Díaz Jaramillo - Advisor(Instructor)](https://github.com/aldiazj)
-* [Victor Hugo Cardona Gómez - Advisor(Instructor)](https://github.com/vcardona)
+* [Alejandro Díaz Jaramillo](https://github.com/aldiazj) - Advisor(Instructor)
+* [Victor Hugo Cardona Gómez](https://github.com/vcardona) - Advisor(Instructor)
